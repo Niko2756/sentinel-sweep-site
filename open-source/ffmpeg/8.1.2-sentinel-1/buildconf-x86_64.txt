@@ -1,0 +1,41 @@
+FFmpeg 8.1.2 embedded configuration reported by the x86_64 slice
+
+  configuration:
+    --prefix=/var/folders/15/9jvryrh97kl094t1y5n3t6qr0000gn/T//SentinelSweep-Embedded-FFmpeg/install/x86_64
+    --target-os=darwin
+    --arch=x86_64
+    --cc=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+    --host-cc=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+    --host-ld=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+    --host-cflags='--sysroot=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk'
+    --host-ldflags='--sysroot=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk'
+    --sysroot=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX26.5.sdk
+    --extra-cflags='-arch x86_64 -mmacosx-version-min=14.0'
+    --extra-ldflags='-arch x86_64 -mmacosx-version-min=14.0'
+    --disable-everything
+    --disable-autodetect
+    --disable-doc
+    --disable-debug
+    --disable-network
+    --disable-avdevice
+    --disable-swresample
+    --disable-shared
+    --enable-static
+    --enable-small
+    --enable-ffmpeg
+    --enable-ffprobe
+    --enable-avcodec
+    --enable-avformat
+    --enable-avfilter
+    --enable-swscale
+    --enable-protocol='file,pipe'
+    --enable-demuxer='avi,asf,matroska,mov,mpegts,mpegps,mpegvideo,flv,ogg,rm,image2,gif,apng,mxf,nut,dv'
+    --enable-decoder='h264,hevc,av1,vp8,vp9,mpeg4,mpeg2video,mpeg1video,msmpeg4v1,msmpeg4v2,msmpeg4v3,wmv1,wmv2,wmv3,vc1,theora,mjpeg,mjpegb,gif,prores,dnxhd,h263,h263i,flv,cinepak,svq1,svq3,indeo3,indeo5,rv10,rv20,rv30,rv40,rawvideo,ffv1,huffyuv'
+    --enable-parser='h264,hevc,av1,vp8,vp9,mpeg4video,mpegvideo,vc1,vp3,mjpeg'
+    --enable-filter=scale
+    --enable-muxer=image2
+    --enable-encoder=mjpeg
+    --enable-cross-compile
+    --disable-x86asm
+
+License: LGPL version 2.1 or later

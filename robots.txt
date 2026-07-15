@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://niko2756.github.io/sentinel-sweep-site/sitemap.xml

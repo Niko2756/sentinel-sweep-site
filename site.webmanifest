@@ -1,0 +1,14 @@
+{
+  "name": "Sentinel Sweep",
+  "short_name": "Sentinel Sweep",
+  "icons": [
+    {
+      "src": "/sentinel-sweep-site/assets/app-icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#06101c",
+  "background_color": "#06101c",
+  "display": "browser"
+}

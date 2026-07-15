@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Sentinel Sweep</title>
+  <meta name="description" content="How Sentinel Sweep processes user-selected files locally, stores app state on the Mac, and handles website visits and support email.">
+  <meta name="theme-color" content="#06101c">
+  <link rel="icon" href="/sentinel-sweep-site/assets/app-icon.png">
+  <link rel="stylesheet" href="/sentinel-sweep-site/assets/styles.css">
+  <script src="/sentinel-sweep-site/assets/site.js" defer></script>
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="/sentinel-sweep-site/" aria-label="Sentinel Sweep home">
+        <img src="/sentinel-sweep-site/assets/app-icon.png" alt="" width="42" height="42">
+        <span>Sentinel Sweep</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Main navigation" data-site-nav>
+        <a href="/sentinel-sweep-site/support/">Support</a>
+        <a href="/sentinel-sweep-site/privacy/" aria-current="page">Privacy</a>
+        <a href="/sentinel-sweep-site/open-source/">Open Source</a>
+        <a class="button" href="mailto:SentinelSweepSupport@gmail.com?subject=Sentinel%20Sweep%20Privacy%20Question">Privacy Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="article-intro">
+      <div class="shell article-intro__inner">
+        <h1>Privacy Policy</h1>
+        <p class="article-intro__lead">Sentinel Sweep is designed to analyze files you choose directly on your Mac without uploading them.</p>
+        <div class="article-meta">
+          <span>Effective July 15, 2026</span>
+          <span>Publisher: Niko Lim</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="shell article-layout">
+        <nav class="toc" aria-label="Privacy policy sections">
+          <strong>On this page</strong>
+          <a href="#overview">Overview</a>
+          <a href="#files-you-choose">Files you choose</a>
+          <a href="#on-device-analysis">On-device analysis</a>
+          <a href="#local-storage">Information stored on your Mac</a>
+          <a href="#collection-sharing">Collection and sharing</a>
+          <a href="#apple-services">Apple services</a>
+          <a href="#website-email">Website and email</a>
+          <a href="#choices-retention">Your choices and retention</a>
+          <a href="#security">Security</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <article class="prose">
+          <div class="callout">
+            <h2>The short version</h2>
+            <ul>
+              <li>No advertising or third-party analytics SDKs.</li>
+              <li>No account required in the app.</li>
+              <li>No app feature uploads your files or scan results to an online service.</li>
+            </ul>
+          </div>
+
+          <h2 id="overview">Overview and scope</h2>
+          <p>This Privacy Policy covers the Sentinel Sweep macOS application, the public Sentinel Sweep website, and messages sent to the Sentinel Sweep support mailbox. “Sentinel Sweep,” “the app,” “we,” and “us” refer to the application published by Niko Lim unless the context identifies the website or email service separately.</p>
+          <p>The app is a local file-review and transfer utility. It does not require an account. Its main features run on the Mac using files and locations the user chooses.</p>
+
+          <h2 id="files-you-choose">Files, folders, and volumes you choose</h2>
+          <p>Sentinel Sweep asks you to choose scan sources, quarantine locations, and transfer destinations through macOS controls. A source may be an individual file, a folder, or a folder on a removable volume. When you choose a folder or volume location, the app may enumerate items inside it to perform the scan you requested. Hidden-file scanning is included by default; scanning inside file packages is controlled separately in the app.</p>
+          <p>macOS security-scoped bookmarks can preserve access to a file or folder you previously approved. For removable volumes, Sentinel Sweep may save access to eligible items immediately inside a selected volume root so those items can be reopened after the drive reconnects. For a transfer root, the app may create or reuse the named child folder you requested and save access to that location. These bookmarks are opaque capability data created by macOS and can include a fallback path used to help locate the item again.</p>
+          <p>You can remove an item from the app, choose it again, or use the reset controls described below. Disconnecting, renaming, or reformatting a drive may make a saved bookmark stale and require reselection.</p>
+
+          <h2 id="on-device-analysis">Information processed on your Mac</h2>
+          <p>For the files you choose, Sentinel Sweep may process:</p>
+          <ul>
+            <li>file and folder names, paths, sizes, dates, types, volume identifiers, and transfer status;</li>
+            <li>filename signals and local classification results;</li>
+            <li>image content and locally sampled video frames;</li>
+            <li>content fingerprints used to recognize earlier Adult or Safe decisions; and</li>
+            <li>SHA-256 hashes used when you enable transfer verification.</li>
+          </ul>
+          <p>To form a content fingerprint for learned decisions, the app can read up to three portions of a file, with each portion limited to 64 KB. The sampled bytes are used to calculate the fingerprint and are not stored as the learned-memory record.</p>
+
+          <h3>Local analysis frameworks and FFmpeg</h3>
+          <p>Sentinel Sweep passes local file URLs to Apple's Sensitive Content Analysis framework for supported analysis. It also uses macOS frameworks including AVFoundation, ImageIO, Vision, Core ML, and Quick Look when appropriate for the media type and system capabilities.</p>
+          <p>For supported video formats, Sentinel Sweep launches bundled FFmpeg and FFprobe command-line helpers as separate local processes. The included FFmpeg 8.1.2 build has network support disabled and enables only the <code>file</code> and <code>pipe</code> protocols. The Sentinel Sweep app executable is not linked to FFmpeg libraries. See the <a href="/sentinel-sweep-site/open-source/ffmpeg/8.1.2-sentinel-1/">FFmpeg source and build page</a>.</p>
+
+          <h3>Temporary video frames</h3>
+          <p>Sampled video frames are written to a randomly named folder in the app's temporary directory for local analysis. Sentinel Sweep removes that folder when the analysis finishes, is cancelled, or fails through the normal error path. As with other applications, an unexpected process or system termination can interrupt immediate cleanup; macOS may retain temporary data until the app or the operating system removes it.</p>
+
+          <h3>Copy, move, quarantine, and overwrite actions</h3>
+          <p>You choose the operation, destination, and conflict behavior. Copy leaves the source item in place. Move places a copy at the selected destination and removes the original after the required placement succeeds. Quarantine is an ordinary local folder you choose. If you select Overwrite, an existing item at the destination can be removed and replaced. Transfer history and undo information may help reverse eligible moves, but you remain responsible for reviewing the chosen operation and destination.</p>
+
+          <h2 id="local-storage">Information stored on your Mac</h2>
+          <p>Sentinel Sweep stores settings and limited app state so it can present your choices, restore interrupted work, remember approved locations, and show transfer history. Depending on the features you use, this can include:</p>
+          <ul>
+            <li>application and interface preferences;</li>
+            <li>learned Adult and Safe decisions, classification signals, and content fingerprints;</li>
+            <li>a review-session checkpoint and an active-transfer checkpoint;</li>
+            <li>transfer logs, status, history, and undo information; and</li>
+            <li>security-scoped bookmarks for files, folders, removable-volume items, and transfer locations you approved.</li>
+          </ul>
+          <p>Saved checkpoints, learned memory, and transfer logs can contain filenames or paths. Current versions write sensitive saved state using AES-GCM encryption with app-specific keys stored in your macOS Keychain. Ordinary preferences are stored in the app's local macOS preferences domain. Other local records are stored under Sentinel Sweep's Application Support directory inside the app's macOS container.</p>
+          <p>Current versions can recognize certain records written by earlier builds and may migrate them to the protected format. If a legacy record cannot be migrated, it may remain on the Mac until you remove the related app data or complete a factory reset.</p>
+
+          <h2 id="collection-sharing">What the app does not collect or share</h2>
+          <p>Sentinel Sweep does not include a feature that uploads scanned media, filenames, file paths, scan results, learned decisions, bookmark data, transfer logs, or app-usage information over a network or to an online service. It does not contain advertising SDKs, third-party analytics SDKs, or cross-app tracking code. It does not sell personal information or share app data for behavioral advertising.</p>
+          <p>The Mac App Store build uses App Sandbox and does not request the outbound network-client entitlement. The bundled FFmpeg helpers are also sandboxed for the release and are compiled with FFmpeg networking disabled.</p>
+
+          <h2 id="apple-services">Apple services, TestFlight, and diagnostics</h2>
+          <p>Apple independently operates macOS, the Mac App Store, TestFlight, and the Sensitive Content Analysis framework. Apple's handling of information is governed by Apple's policies and by the choices you make in macOS and TestFlight.</p>
+          <p>If you choose to share diagnostics with Apple or app developers, Apple may provide crash or performance diagnostics. Sentinel Sweep does not intentionally attach scanned file contents, file paths, or scan results to those diagnostics. System-generated reports can still contain technical context selected by macOS. If you submit feedback through TestFlight, Apple may include information you choose to send, such as written comments, a screenshot, crash details, or device and operating-system information.</p>
+
+          <h2 id="website-email">Public website and support email</h2>
+          <h3>GitHub Pages website</h3>
+          <p>This public website is hosted through GitHub Pages. The site contains no advertising, analytics tag, tracking pixel, account system, or marketing form, and its navigation script does not store information in your browser. GitHub may collect and log visitor information, including IP addresses, for security and service operation under the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub General Privacy Statement</a>. We do not operate a separate website-visitor analytics service for this site.</p>
+
+          <h3>Gmail support mailbox</h3>
+          <p>If you email <a href="mailto:SentinelSweepSupport@gmail.com">SentinelSweepSupport@gmail.com</a>, Google processes the message through Gmail. The publisher receives the information you choose to include, such as your email address, message headers, written description, and any attachments. Do not send private media, passwords, passkeys, signing keys, recovery codes, or unredacted logs.</p>
+          <p>Support messages may be kept while needed to respond, investigate beta issues, prevent abuse, maintain necessary business records, or comply with law. You may request deletion of a support message by emailing the same address. A request may not cover copies that Google retains under its own policies or information that must be retained for security or legal reasons.</p>
+
+          <h2 id="choices-retention">Your choices, deletion, and retention</h2>
+          <p>Local app state remains on your Mac until you clear it, replace it through ordinary use, complete a factory reset, or macOS removes the app's container. Different controls affect different records:</p>
+          <ul>
+            <li><strong>Clear Learned Memory</strong> removes learned Adult and Safe decisions.</li>
+            <li><strong>Clear Transfer History</strong> removes saved transfer logs and the latest transfer summary, which can also remove the in-app ability to undo moves described only by those logs.</li>
+            <li>Queue and result controls remove the current in-app working state they name; they do not automatically erase unrelated history, bookmarks, learned memory, or every interrupted-work checkpoint.</li>
+            <li>A review checkpoint or interrupted-transfer checkpoint remains separate until the app completes, discards, replaces, or resets that state.</li>
+            <li>Saved access remains until the related item is removed or replaced in the app, the bookmark becomes unusable, or factory reset removes the app's saved bookmark state.</li>
+            <li><strong>Restore Factory Defaults</strong> schedules a full reset. The reset completes on the next launch and removes Sentinel Sweep's Application Support data, preferences, saved bookmarks, and—when macOS permits—its app-specific Keychain protection keys.</li>
+          </ul>
+          <p>These controls do not delete source files or files already copied or moved to locations you chose. Removing the app in Finder does not necessarily remove every item macOS retains in Application Support, preferences, or Keychain. If you want the in-app full reset, use Restore Factory Defaults and relaunch Sentinel Sweep before uninstalling.</p>
+          <p>See <a href="/sentinel-sweep-site/privacy-choices/">Privacy Choices</a> for a plain-language guide to each control.</p>
+
+          <h2 id="security">Security</h2>
+          <p>The release is designed to use App Sandbox, user-selected file access, security-scoped bookmarks, local encryption for sensitive saved state, and device-only Keychain protection for app-specific keys. These measures reduce risk but cannot guarantee that every storage system, operating system, or software process will be completely secure. Keep macOS updated, protect your Mac account, and maintain backups appropriate for files you copy or move.</p>
+
+          <h2 id="children">Children</h2>
+          <p>Sentinel Sweep is a general-purpose Mac utility and is not directed to children. The app does not create user accounts or operate a service that collects scanned files. If you believe a child sent personal information to the support mailbox, contact the publisher using the address below.</p>
+
+          <h2 id="changes">Changes to this policy</h2>
+          <p>This policy may be updated when Sentinel Sweep's behavior, hosting, support process, or legal obligations change. The current published version will show its effective date.</p>
+
+          <h2 id="contact">Privacy contact</h2>
+          <p>For a privacy question or a request concerning information you sent to support, email:</p>
+          <p><strong>Niko Lim</strong><br><a href="mailto:SentinelSweepSupport@gmail.com?subject=Sentinel%20Sweep%20Privacy%20Question">SentinelSweepSupport@gmail.com</a></p>
+          <p>A shorter contact-only version is available at the <a href="/sentinel-sweep-site/privacy-contact/">Sentinel Sweep Privacy Contact page</a>.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div class="footer-meta">
+        <span>© 2026 Niko Lim</span>
+        <a href="mailto:SentinelSweepSupport@gmail.com">SentinelSweepSupport@gmail.com</a>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/sentinel-sweep-site/support/">Support</a>
+        <a href="/sentinel-sweep-site/privacy/">Privacy</a>
+        <a href="/sentinel-sweep-site/privacy-choices/">Privacy Choices</a>
+        <a href="/sentinel-sweep-site/open-source/">Open Source</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

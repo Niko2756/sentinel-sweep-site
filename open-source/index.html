@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open-Source Notices — Sentinel Sweep</title>
+  <meta name="description" content="FFmpeg source availability, license terms, build details, and third-party filename-signal attributions for Sentinel Sweep.">
+  <meta name="theme-color" content="#06101c">
+  <link rel="icon" href="/sentinel-sweep-site/assets/app-icon.png">
+  <link rel="stylesheet" href="/sentinel-sweep-site/assets/styles.css">
+  <script src="/sentinel-sweep-site/assets/site.js" defer></script>
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="/sentinel-sweep-site/" aria-label="Sentinel Sweep home">
+        <img src="/sentinel-sweep-site/assets/app-icon.png" alt="" width="42" height="42">
+        <span>Sentinel Sweep</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Main navigation" data-site-nav>
+        <a href="/sentinel-sweep-site/support/">Support</a>
+        <a href="/sentinel-sweep-site/privacy/">Privacy</a>
+        <a href="/sentinel-sweep-site/open-source/" aria-current="page">Open Source</a>
+        <a class="button" href="mailto:SentinelSweepSupport@gmail.com?subject=Sentinel%20Sweep%20Open-Source%20Question">Legal Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="article-intro">
+      <div class="shell article-intro__inner">
+        <h1>Open-Source Notices</h1>
+        <p class="article-intro__lead">Sentinel Sweep includes FFmpeg command-line helpers and derived public filename-signal lists. Their source, licenses, and attributions are provided below.</p>
+        <div class="article-meta">
+          <span>Release notice dated July 15, 2026</span>
+          <span>Publisher: Niko Lim</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="shell article-layout">
+        <nav class="toc" aria-label="Open-source notice sections">
+          <strong>On this page</strong>
+          <a href="#scope">Scope</a>
+          <a href="#ffmpeg">FFmpeg 8.1.2</a>
+          <a href="#ffmpeg-source">FFmpeg source availability</a>
+          <a href="#ijg">Independent JPEG Group</a>
+          <a href="#signal-lists">Filename-signal lists</a>
+          <a href="#mit-notices">MIT notices</a>
+          <a href="#cc-attribution">CC BY 4.0 attribution</a>
+          <a href="#contact">Contact</a>
+        </nav>
+
+        <article class="prose">
+          <div class="callout">
+            <h2>Source package available now</h2>
+            <p>The exact FFmpeg 8.1.2 source archive, LGPL license, build script, per-architecture build records, and checksums for Sentinel Sweep's bundled helpers are available at the <a href="/sentinel-sweep-site/open-source/ffmpeg/8.1.2-sentinel-1/">versioned source page</a>.</p>
+          </div>
+
+          <h2 id="scope">What this notice covers</h2>
+          <p>Sentinel Sweep's application code is proprietary. The third-party materials named on this page remain available under their own licenses. Nothing on this page changes those licenses or suggests that the third-party authors endorse Sentinel Sweep.</p>
+
+          <h2 id="ffmpeg">FFmpeg 8.1.2</h2>
+          <p>Sentinel Sweep includes separately signed <code>ffmpeg</code> and <code>ffprobe</code> command-line programs from the <a href="https://ffmpeg.org/">FFmpeg project</a>. The app launches these helpers as separate local processes for supported video-frame extraction and metadata inspection. The Sentinel Sweep application executable is not linked against FFmpeg libraries.</p>
+          <p>The helpers were built from unmodified upstream FFmpeg 8.1.2 source and are distributed under the <strong>GNU Lesser General Public License, version 2.1 or later</strong>. The build does not enable FFmpeg's GPL, nonfree, version-3-only, or external third-party codec-library options. It builds static FFmpeg libraries into the separate FFmpeg executables, enables only the required decoders and tools, disables network support, and enables only the <code>file</code> and <code>pipe</code> protocols.</p>
+          <p>FFmpeg is a trademark of Fabrice Bellard, originator of the FFmpeg project. The FFmpeg project provides additional <a href="https://ffmpeg.org/legal.html">legal information</a>.</p>
+
+          <div class="definition-list" aria-label="FFmpeg release facts">
+            <div>
+              <dt>Distributed version</dt>
+              <dd>FFmpeg 8.1.2, universal arm64 and x86_64 helpers</dd>
+            </div>
+            <div>
+              <dt>License</dt>
+              <dd>LGPL version 2.1 or later</dd>
+            </div>
+            <div>
+              <dt>Local modifications</dt>
+              <dd>None</dd>
+            </div>
+            <div>
+              <dt>Source archive SHA-256</dt>
+              <dd><span class="checksum">464beb5e7bf0c311e68b45ae2f04e9cc2af88851abb4082231742a74d97b524c</span></dd>
+            </div>
+            <div>
+              <dt>Bundled ffmpeg SHA-256</dt>
+              <dd><span class="checksum">bdb22e52e8f7b17b2bb9f6e6fea0b55a78180d2ee5e0a20ebebfec1e268a9d53</span></dd>
+            </div>
+            <div>
+              <dt>Bundled ffprobe SHA-256</dt>
+              <dd><span class="checksum">2dcf8aa8a54f89251e35d421257b75e1f63d570dd17bd8ee534ac1b4e8c34555</span></dd>
+            </div>
+          </div>
+
+          <h2 id="ffmpeg-source">FFmpeg source availability</h2>
+          <p>The complete corresponding source and the build materials used for this Sentinel Sweep FFmpeg release are available without charge at a stable, versioned URL:</p>
+          <p><a href="/sentinel-sweep-site/open-source/ffmpeg/8.1.2-sentinel-1/">Sentinel Sweep FFmpeg 8.1.2 source and build package</a></p>
+          <p>The package contains the unmodified upstream source archive, the LGPL 2.1 text, the build script used by Sentinel Sweep, arm64 and x86_64 configure summaries and build-configuration transcripts, a no-modifications statement, and SHA-256 checksums. The upstream project also provides <a href="https://ffmpeg.org/download.html">FFmpeg source downloads</a>.</p>
+          <p>This versioned package corresponds to the FFmpeg helpers identified above. It will remain available for users of Sentinel Sweep builds that distribute those helpers.</p>
+
+          <h2 id="ijg">Independent JPEG Group notice</h2>
+          <p><strong>This software is based in part on the work of the Independent JPEG Group.</strong></p>
+
+          <h2 id="signal-lists">Third-party filename-signal lists</h2>
+          <p>Sentinel Sweep bundles two generated lexicons used only for local filename scoring:</p>
+          <ul>
+            <li><code>public-profanity.lexicon</code> contains 300 filtered English terms derived from Google Profanity Words.</li>
+            <li><code>public-adult-hosts.lexicon</code> contains 38,547 adult-domain stems derived from source lists maintained in the StevenBlack/hosts porn extension.</li>
+          </ul>
+          <p>The generation process filters and normalizes the source material into Sentinel Sweep's <code>category|weight|term</code> format. For domain sources, it extracts adult-domain stems of at least seven characters, removes common prefixes, suffixes, and generic terms, excludes snuff and gore sources, combines the remaining terms, and removes duplicates.</p>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>License and attribution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><a href="https://github.com/coffee-and-fun/google-profanity-words">Google Profanity Words</a></td>
+                <td>MIT — Robert James Gabriel / Coffee &amp; Fun LLC</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/StevenBlack/hosts">StevenBlack/hosts</a></td>
+                <td>MIT aggregator — Copyright © 2023 Steven Black; underlying extension sources retain their own licenses</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/bigdargon/hostsVN">BigDargon's adult-domain source</a></td>
+                <td>MIT — Copyright (c) 2026 BigDargon</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/brijrajparmar27/host-sources">brijrajparmar27 pornography hosts</a></td>
+                <td>CC BY 4.0 — attribution to brijrajparmar27</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/Clefspeare13/pornhosts">Clefspeare13 pornhosts</a></td>
+                <td>MIT — attribution to Niclas (@Clefspeare13), @Spirillen, and project contributors; source consumed from the StevenBlack/hosts mirror</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/Sinfonietta/hostfiles">Sinfonietta pornography hosts</a></td>
+                <td>MIT — Copyright © 2016 Sinfonietta</td>
+              </tr>
+              <tr>
+                <td><a href="https://github.com/tiuxo/hosts">Tiuxo pornography hosts</a></td>
+                <td>CC BY 4.0 — attribution to Tiuxo</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h2 id="mit-notices">MIT license notices</h2>
+          <p>The following copyright and attribution notices are retained for the MIT-licensed list sources:</p>
+          <ul>
+            <li>Google Profanity Words: Copyright (c) Robert James Gabriel / Coffee &amp; Fun LLC.</li>
+            <li>StevenBlack/hosts: Copyright © 2023 Steven Black.</li>
+            <li>BigDargon hostsVN: Copyright (c) 2026 BigDargon.</li>
+            <li>Sinfonietta hostfiles: Copyright (c) 2016 Sinfonietta.</li>
+            <li>Clefspeare13 pornhosts: attribution to Niclas (@Clefspeare13), @Spirillen, and contributors maintained in the original project history.</li>
+          </ul>
+          <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+          <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+          <p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+          <p>Original license files: <a href="https://raw.githubusercontent.com/coffee-and-fun/google-profanity-words/main/LICENSE">Google Profanity Words</a>, <a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/license.txt">StevenBlack/hosts</a>, <a href="https://github.com/bigdargon/hostsVN/blob/master/LICENSE">BigDargon hostsVN</a>, and <a href="https://raw.githubusercontent.com/Sinfonietta/hostfiles/master/LICENSE">Sinfonietta hostfiles</a>.</p>
+
+          <h2 id="cc-attribution">Creative Commons Attribution 4.0</h2>
+          <p>Sentinel Sweep contains adapted domain stems from brijrajparmar27 and Tiuxo sources identified above. Those source materials are licensed under the <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International license</a>.</p>
+          <p><strong>Attribution:</strong> “brijrajparmar27 pornography hosts” by brijrajparmar27 and “Tiuxo pornography hosts” by Tiuxo, used through the StevenBlack/hosts porn extension. Changes made for Sentinel Sweep: domain extraction, minimum-length filtering, removal of common prefixes, suffixes and generic stems, exclusion of snuff/gore source folders, normalization, combination, deduplication, and conversion to weighted local filename signals.</p>
+          <p>The original Tiuxo license is available in the <a href="https://github.com/tiuxo/hosts/blob/master/LICENSE">Tiuxo repository</a>. The brijrajparmar27 source is available from the <a href="https://github.com/brijrajparmar27/host-sources">host-sources repository</a> and its mirrored source metadata in StevenBlack/hosts.</p>
+
+          <h2 id="contact">Questions about these notices</h2>
+          <p>Email <a href="mailto:SentinelSweepSupport@gmail.com?subject=Sentinel%20Sweep%20Open-Source%20Question">SentinelSweepSupport@gmail.com</a>. Include the Sentinel Sweep version, the component name, and the file or notice you are asking about.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div class="footer-meta">
+        <span>© 2026 Niko Lim</span>
+        <a href="mailto:SentinelSweepSupport@gmail.com">SentinelSweepSupport@gmail.com</a>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/sentinel-sweep-site/support/">Support</a>
+        <a href="/sentinel-sweep-site/privacy/">Privacy</a>
+        <a href="/sentinel-sweep-site/privacy-choices/">Privacy Choices</a>
+        <a href="/sentinel-sweep-site/open-source/">Open Source</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

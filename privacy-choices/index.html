@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Choices — Sentinel Sweep</title>
+  <meta name="description" content="A plain-language guide to Sentinel Sweep's local data, access, history, and factory-reset controls.">
+  <meta name="theme-color" content="#06101c">
+  <link rel="icon" href="/sentinel-sweep-site/assets/app-icon.png">
+  <link rel="stylesheet" href="/sentinel-sweep-site/assets/styles.css">
+  <script src="/sentinel-sweep-site/assets/site.js" defer></script>
+</head>
+<body class="article-page">
+  <a class="skip-link" href="#main">Skip to main content</a>
+  <header class="site-header">
+    <div class="shell site-header__inner">
+      <a class="brand" href="/sentinel-sweep-site/" aria-label="Sentinel Sweep home">
+        <img src="/sentinel-sweep-site/assets/app-icon.png" alt="" width="42" height="42">
+        <span>Sentinel Sweep</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-navigation" data-nav-toggle>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+      </button>
+      <nav class="site-nav" id="site-navigation" aria-label="Main navigation" data-site-nav>
+        <a href="/sentinel-sweep-site/support/">Support</a>
+        <a href="/sentinel-sweep-site/privacy/" aria-current="page">Privacy</a>
+        <a href="/sentinel-sweep-site/open-source/">Open Source</a>
+        <a class="button" href="mailto:SentinelSweepSupport@gmail.com?subject=Sentinel%20Sweep%20Privacy%20Question">Privacy Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="article-intro">
+      <div class="shell article-intro__inner">
+        <h1>Privacy Choices</h1>
+        <p class="article-intro__lead">Sentinel Sweep keeps its working data on your Mac and separates its controls so you can clear only what you intend.</p>
+        <div class="article-meta">
+          <span>Applies to current macOS beta builds</span>
+          <span>Publisher: Niko Lim</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="article-body">
+      <div class="shell article-layout">
+        <nav class="toc" aria-label="Privacy choices sections">
+          <strong>On this page</strong>
+          <a href="#choose-access">Choose and remove access</a>
+          <a href="#clear-results">Clear results</a>
+          <a href="#learned-memory">Clear learned memory</a>
+          <a href="#transfer-history">Clear transfer history</a>
+          <a href="#checkpoints">Interrupted work</a>
+          <a href="#factory-reset">Factory reset</a>
+          <a href="#apple-diagnostics">Apple diagnostics</a>
+          <a href="#support-email">Support email</a>
+        </nav>
+
+        <article class="prose">
+          <div class="callout">
+            <h2>Nothing here deletes your source or transferred files</h2>
+            <p>Sentinel Sweep's privacy controls remove app state. They do not delete files from the source, quarantine, or destination locations you chose. File deletion or replacement can occur only through the transfer operations you select, such as Move or Overwrite.</p>
+          </div>
+
+          <h2 id="choose-access">Choose and remove file access</h2>
+          <p>On Setup, you choose each scan source, quarantine folder, and destination. Sentinel Sweep uses macOS permissions and security-scoped bookmarks to reopen approved items.</p>
+          <ul>
+            <li>Remove an individual source or source group from the Scan Queue when you no longer want it in the active setup.</li>
+            <li>Use the clear-source control to empty the scan-source queue and release its active source bookmarks.</li>
+            <li>Choose a different quarantine or destination folder to replace the previous selection.</li>
+            <li>Use Restore Factory Defaults if you want to remove all saved Sentinel Sweep bookmark state at once.</li>
+          </ul>
+          <p>A removable drive can require reselection after it is renamed, reformatted, disconnected, or mounted differently.</p>
+
+          <h2 id="clear-results">Clear current scan results</h2>
+          <p>On Setup, choose <strong>Clear Results</strong> to remove the current scan's result list and its saved review-session checkpoint. This also clears the current selection and learning work that has not yet finished.</p>
+          <p>Clear Results does not clear learned memory, transfer history, every transfer-queue item, a separately saved interrupted-transfer checkpoint, application preferences, or all saved location access. Use the controls below for those records.</p>
+
+          <h2 id="learned-memory">Clear learned memory</h2>
+          <p>Choose <strong>Clear Learned Memory…</strong> from the Sweep menu, or open <strong>Settings › Learning</strong> and choose <strong>Clear Memory…</strong>.</p>
+          <p>This permanently removes the Adult and Safe examples Sentinel Sweep has learned, including the local signals and fingerprints used to recognize those decisions. It does not delete files, current scan results, transfer history, queues, or current selections. Future scans stop using the deleted remembered decisions.</p>
+
+          <h2 id="transfer-history">Clear transfer history and undo logs</h2>
+          <p>Choose <strong>Clear Transfer History…</strong> from the Sweep menu and confirm <strong>Clear History</strong>.</p>
+          <p>This removes saved transfer logs and the latest transfer summary. It does not change files that were copied or moved, current scan results, queues, or learned decisions. A past move can no longer be undone from Sentinel Sweep if the information required for that undo existed only in a deleted log.</p>
+
+          <h2 id="checkpoints">Resume or discard interrupted work</h2>
+          <h3>Interrupted transfer</h3>
+          <p>When the Transfers screen shows an <strong>Interrupted Transfer</strong> banner, choose <strong>Resume</strong> to continue the remaining work or <strong>Discard</strong> to delete that interrupted-transfer checkpoint. Discard does not reverse files that already finished copying or moving.</p>
+          <h3>Review-session checkpoint</h3>
+          <p>Sentinel Sweep saves a separate review-session checkpoint so scan and review state can survive a relaunch. Clearing results removes the active review state and that review checkpoint. Factory reset removes all checkpoints.</p>
+
+          <h2 id="factory-reset">Restore Factory Defaults</h2>
+          <p>Open <strong>Settings › Reset</strong>, choose <strong>Restore Factory Defaults…</strong>, then confirm <strong>Reset and Quit</strong>.</p>
+          <p>Sentinel Sweep records a one-time reset request and quits. The deletion finishes before the app builds its state on the next launch. Reopen Sentinel Sweep to complete the reset.</p>
+          <p>The factory reset removes:</p>
+          <ul>
+            <li>learned Adult and Safe decisions;</li>
+            <li>saved scan and review results;</li>
+            <li>queues and review or transfer checkpoints;</li>
+            <li>transfer history, undo logs, and local recovery backups;</li>
+            <li>saved settings and window or table preferences;</li>
+            <li>saved security-scoped bookmarks; and</li>
+            <li>the app's local protection keys from Keychain when macOS permits.</li>
+          </ul>
+          <p>It does not delete or change source files or files already copied or moved.</p>
+          <div class="callout callout--warning">
+            <h3>Complete the relaunch before uninstalling</h3>
+            <p>Deleting the app in Finder does not guarantee that macOS removes every item in Application Support, preferences, or Keychain. If you want Sentinel Sweep to perform its in-app full reset, confirm the reset and then reopen the app once before uninstalling it.</p>
+          </div>
+
+          <h2 id="apple-diagnostics">Apple and TestFlight diagnostics</h2>
+          <p>Apple controls diagnostic sharing for macOS, the Mac App Store, and TestFlight. You can review the analytics and diagnostics choices in System Settings and the feedback you submit through TestFlight. Exact labels can vary by macOS version.</p>
+          <p>Sentinel Sweep does not intentionally attach scanned file contents, paths, or results to diagnostics. System-generated reports are prepared by Apple and can contain technical context chosen by macOS.</p>
+
+          <h2 id="support-email">Delete information sent by email</h2>
+          <p>The app does not have a Sentinel Sweep account to delete. If you sent personal information to <a href="mailto:SentinelSweepSupport@gmail.com">SentinelSweepSupport@gmail.com</a>, you can email the same address and ask for deletion of the support message.</p>
+          <p>Google may retain information under Gmail's own policies, and some records may need to be kept for security or legal reasons. Do not send scanned media, passwords, passkeys, signing keys, recovery codes, or unredacted logs.</p>
+
+          <h2 id="questions">Questions</h2>
+          <p>For help choosing the right control, email <a href="mailto:SentinelSweepSupport@gmail.com?subject=Sentinel%20Sweep%20Privacy%20Choice">SentinelSweepSupport@gmail.com</a>. You can also read the complete <a href="/sentinel-sweep-site/privacy/">Privacy Policy</a>.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <div class="footer-meta">
+        <span>© 2026 Niko Lim</span>
+        <a href="mailto:SentinelSweepSupport@gmail.com">SentinelSweepSupport@gmail.com</a>
+      </div>
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="/sentinel-sweep-site/support/">Support</a>
+        <a href="/sentinel-sweep-site/privacy/">Privacy</a>
+        <a href="/sentinel-sweep-site/privacy-choices/">Privacy Choices</a>
+        <a href="/sentinel-sweep-site/open-source/">Open Source</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

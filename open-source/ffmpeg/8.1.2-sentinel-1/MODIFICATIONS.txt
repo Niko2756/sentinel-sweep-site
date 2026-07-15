@@ -1,0 +1,7 @@
+Local FFmpeg source modifications: none.
+
+Sentinel Sweep's ffmpeg and ffprobe helpers were built from the unmodified
+FFmpeg 8.1.2 upstream source archive identified in BUILD-INFO.txt. The narrow
+feature selection, deployment target, disabled network support, and enabled
+file and pipe protocols are build-configuration choices, not source-code
+modifications.

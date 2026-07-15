@@ -1,0 +1,99 @@
+install prefix            /var/folders/15/9jvryrh97kl094t1y5n3t6qr0000gn/T//SentinelSweep-Embedded-FFmpeg/install/arm64
+source path               /var/folders/15/9jvryrh97kl094t1y5n3t6qr0000gn/T/SentinelSweep-Embedded-FFmpeg/source/ffmpeg-8.1.2
+C compiler                /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang
+C library                 
+ARCH                      aarch64 (generic)
+big-endian                no
+runtime cpu detection     yes
+NEON enabled              yes
+DOTPROD enabled           yes
+I8MM enabled              yes
+SVE enabled               yes
+SVE2 enabled              yes
+SME enabled               yes
+SME-I16I64 enabled        yes
+SME2 enabled              yes
+debug symbols             no
+strip symbols             yes
+optimize for size         yes
+optimizations             yes
+static                    yes
+shared                    no
+network support           no
+threading support         pthreads
+safe bitstream reader     yes
+texi2html enabled         no
+perl enabled              yes
+pod2man enabled           yes
+makeinfo enabled          no
+makeinfo supports HTML    no
+experimental features     yes
+xmllint enabled           yes
+
+External libraries:
+
+External libraries providing hardware acceleration:
+
+Libraries:
+avcodec                 avformat                swscale
+avfilter                avutil
+
+Programs:
+ffmpeg                  ffprobe
+
+Enabled decoders:
+av1                     mjpeg                   rv40
+cinepak                 mjpegb                  svq1
+dnxhd                   mpeg1video              svq3
+ffv1                    mpeg2video              theora
+flv                     mpeg4                   vc1
+gif                     msmpeg4v1               vp3
+h263                    msmpeg4v2               vp8
+h263i                   msmpeg4v3               vp9
+h264                    prores                  wmv1
+hevc                    rawvideo                wmv2
+huffyuv                 rv10                    wmv3
+indeo3                  rv20
+indeo5                  rv30
+
+Enabled encoders:
+mjpeg
+
+Enabled hwaccels:
+
+Enabled parsers:
+av1                     mpeg4video              vp8
+h264                    mpegvideo               vp9
+hevc                    vc1
+mjpeg                   vp3
+
+Enabled demuxers:
+apng                    image2                  mxf
+asf                     matroska                nut
+avi                     mov                     ogg
+dv                      mpegps                  rm
+flv                     mpegts
+gif                     mpegvideo
+
+Enabled muxers:
+image2
+
+Enabled protocols:
+file                    pipe
+
+Enabled filters:
+aformat                 format                  scale
+anull                   hflip                   transpose
+atrim                   null                    trim
+crop                    rotate                  vflip
+
+Enabled bsfs:
+vp9_superframe_split
+
+Enabled indevs:
+
+Enabled outdevs:
+
+License: LGPL version 2.1 or later
+
+WARNING: pkg-config not found, library detection may fail.

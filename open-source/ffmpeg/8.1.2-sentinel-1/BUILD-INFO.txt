@@ -1,0 +1,35 @@
+Sentinel Sweep FFmpeg corresponding source package
+
+Release identifier: 8.1.2-sentinel-1
+Package assembled: 2026-07-15
+Publisher: Niko Lim
+
+Upstream project: https://ffmpeg.org/
+Upstream version: 8.1.2
+Upstream archive: https://ffmpeg.org/releases/ffmpeg-8.1.2.tar.xz
+Upstream archive SHA-256: 464beb5e7bf0c311e68b45ae2f04e9cc2af88851abb4082231742a74d97b524c
+
+Distributed helper architectures: arm64 and x86_64 in universal Mach-O files
+Minimum macOS deployment target used by the build: 14.0
+License reported by both architecture builds: LGPL version 2.1 or later
+Local FFmpeg source modifications: none
+Network support: disabled
+Enabled protocols: file and pipe
+External third-party codec libraries: none
+GPL, nonfree, and version-3-only configuration options: not enabled
+
+Sentinel Sweep bundled ffmpeg SHA-256:
+bdb22e52e8f7b17b2bb9f6e6fea0b55a78180d2ee5e0a20ebebfec1e268a9d53
+
+Sentinel Sweep bundled ffprobe SHA-256:
+2dcf8aa8a54f89251e35d421257b75e1f63d570dd17bd8ee534ac1b4e8c34555
+
+Build script: build_embedded_ffmpeg.sh
+Configure summaries: configure-summary-arm64.txt and configure-summary-x86_64.txt
+Embedded binary transcripts: buildconf-arm64.txt and buildconf-x86_64.txt
+License text: COPYING.LGPLv2.1
+Modification statement: MODIFICATIONS.txt
+
+The Sentinel Sweep application executable is not linked against FFmpeg
+libraries. It launches the separately signed ffmpeg and ffprobe helpers as
+local command-line processes.
