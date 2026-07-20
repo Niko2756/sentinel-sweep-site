@@ -3,6 +3,15 @@
 Static GitHub Pages site for Sentinel Sweep pricing, purchase and beta support,
 privacy, privacy choices, and open-source notices.
 
+## Customer-facing access model
+
+The site follows the implemented StoreKit cutoff in the app: scanning, review,
+learning, and manual transfer-queue planning are free. The one-time Transfer
+Access purchase unlocks Quick Copy, Quick Move, the final Review Transfer screen,
+and all new Copy and Move transfers. A purchase or restore never starts or
+repeats a file operation automatically. Pause, resume, cancel, recovery, History,
+and eligible Undo remain available for work already begun.
+
 Public base URL:
 
 `https://niko2756.github.io/sentinel-sweep-site/`
