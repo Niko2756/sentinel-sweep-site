@@ -38,6 +38,10 @@
     ".workflow__item",
     ".home-section .section-grid > *",
     ".source-ledger__row",
+    ".pricing-card",
+    ".pricing-disclosure",
+    ".purchase-steps li",
+    ".pricing-contact",
     ".contact-band__inner",
     ".article-intro__inner",
     ".article-layout",
@@ -46,7 +50,7 @@
 
   revealTargets.forEach((target, index) => {
     target.classList.add("reveal-target");
-    if (target.matches(".workflow__item, .source-ledger__row")) {
+    if (target.matches(".workflow__item, .source-ledger__row, .pricing-card, .purchase-steps li")) {
       target.style.setProperty("--reveal-delay", `${(index % 4) * 85}ms`);
     }
   });

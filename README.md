@@ -1,7 +1,7 @@
 # Sentinel Sweep public site
 
-Static GitHub Pages site for Sentinel Sweep support, privacy, privacy choices,
-and open-source notices.
+Static GitHub Pages site for Sentinel Sweep pricing, purchase and beta support,
+privacy, privacy choices, and open-source notices.
 
 Public base URL:
 
@@ -23,6 +23,7 @@ Then open:
 
 ## Public pages
 
+- `/pricing/`
 - `/support/`
 - `/privacy/`
 - `/privacy-choices/`
