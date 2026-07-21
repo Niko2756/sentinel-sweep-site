@@ -36,6 +36,8 @@
 
   const revealTargets = Array.from(document.querySelectorAll([
     ".workflow__item",
+    ".tour-intro",
+    ".tour-card",
     ".home-section .section-grid > *",
     ".source-ledger__row",
     ".pricing-card",
@@ -50,7 +52,7 @@
 
   revealTargets.forEach((target, index) => {
     target.classList.add("reveal-target");
-    if (target.matches(".workflow__item, .source-ledger__row, .pricing-card, .purchase-steps li")) {
+    if (target.matches(".workflow__item, .tour-card, .source-ledger__row, .pricing-card, .purchase-steps li")) {
       target.style.setProperty("--reveal-delay", `${(index % 4) * 85}ms`);
     }
   });

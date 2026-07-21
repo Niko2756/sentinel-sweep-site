@@ -30,6 +30,22 @@ Then open:
 
 `http://127.0.0.1:4173/sentinel-sweep-site/`
 
+## Homepage screenshot gallery
+
+The homepage gallery uses deterministic 1440 × 900 RGB PNG exports from the
+verified app bundle. The Review, explanation, transfer-planning, and completion
+screens come from a completed 2,107-file privacy-safe scan: 24 High, 16 Likely,
+96 Review, and 1,971 Safe. Public crops remove the local source path while
+preserving the actual app UI and counts.
+
+- `assets/screenshot-review-results.png`
+- `assets/screenshot-why-result.png`
+- `assets/screenshot-transfer-plan.png`
+- `assets/screenshot-scan-summary.png`
+
+The source captures, composition script, manifest, and provenance notes remain
+in the private application workspace under `Docs/AppStoreAssets/ProductScreenshots/`.
+
 ## Public pages
 
 - `/pricing/`
