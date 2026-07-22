@@ -1,6 +1,9 @@
 {
   "name": "Sentinel Sweep",
   "short_name": "Sentinel Sweep",
+  "description": "Private local media review and deliberate file transfer for Mac.",
+  "start_url": "/sentinel-sweep-site/",
+  "scope": "/sentinel-sweep-site/",
   "icons": [
     {
       "src": "/sentinel-sweep-site/assets/app-icon.png",
@@ -10,5 +13,6 @@
   ],
   "theme_color": "#06101c",
   "background_color": "#06101c",
-  "display": "browser"
+  "display": "browser",
+  "categories": ["utilities", "productivity"]
 }

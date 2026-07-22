@@ -1,7 +1,7 @@
 # Sentinel Sweep public site
 
-Static GitHub Pages site for Sentinel Sweep pricing, purchase and beta support,
-privacy, privacy choices, and open-source notices.
+Static GitHub Pages launch site for Sentinel Sweep product information, pricing,
+support, privacy, privacy choices, and open-source notices.
 
 ## Customer-facing access model
 
@@ -12,9 +12,17 @@ and all new Copy and Move transfers. A purchase or restore never starts or
 repeats a file operation automatically. Pause, resume, cancel, recovery, History,
 and eligible Undo remain available for work already begun.
 
+Sentinel Sweep is a free Mac App Store download. Lifetime Transfer Access is a
+US$9.99 non-consumable in-app purchase in the U.S. App Store, with local pricing
+set by Apple by country or region. There is no subscription.
+
 Public base URL:
 
 `https://niko2756.github.io/sentinel-sweep-site/`
+
+Mac App Store URL:
+
+`https://apps.apple.com/app/id6790672917`
 
 ## Local preview
 
@@ -32,16 +40,19 @@ Then open:
 
 ## Homepage screenshot gallery
 
-The homepage gallery uses deterministic 1440 × 900 RGB PNG exports from the
-verified app bundle. The Review, explanation, transfer-planning, and completion
-screens come from a completed 2,107-file privacy-safe scan: 24 High, 16 Likely,
-96 Review, and 1,971 Safe. Public crops remove the local source path while
-preserving the actual app UI and counts.
+The homepage uses deterministic 1440 × 900 RGB PNG exports from the verified app
+bundle. The launch sequence shows choosing a source, reviewing results, planning
+a transfer, understanding a result, local privacy controls, and transfer history.
+The Review screen comes from a completed 2,107-file privacy-safe scan: 24 High,
+16 Likely, 96 Review, and 1,971 Safe. Public crops remove the local source path
+while preserving the actual app UI and counts.
 
-- `assets/screenshot-review-results.png`
-- `assets/screenshot-why-result.png`
-- `assets/screenshot-transfer-plan.png`
-- `assets/screenshot-scan-summary.png`
+- `assets/launch-choose.png`
+- `assets/launch-review.png`
+- `assets/launch-transfer.png`
+- `assets/launch-explain.png`
+- `assets/launch-privacy.png`
+- `assets/launch-history.png`
 
 The source captures, composition script, manifest, and provenance notes remain
 in the private application workspace under `Docs/AppStoreAssets/ProductScreenshots/`.

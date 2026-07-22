@@ -34,34 +34,59 @@
 
   document.documentElement.classList.add("has-js");
 
-  const revealTargets = Array.from(document.querySelectorAll([
-    ".workflow__item",
-    ".tour-intro",
-    ".tour-card",
-    ".home-section .section-grid > *",
-    ".source-ledger__row",
-    ".pricing-card",
-    ".pricing-disclosure",
-    ".purchase-steps li",
-    ".pricing-contact",
-    ".contact-band__inner",
-    ".article-intro__inner",
-    ".article-layout",
-    ".support-grid"
-  ].join(",")));
+  const revealTargets = [];
+  const seenRevealTargets = new Set();
+  const addRevealGroup = (selector, directions = ["up"], stagger = 0) => {
+    document.querySelectorAll(selector).forEach((target, index) => {
+      if (seenRevealTargets.has(target)) return;
+      seenRevealTargets.add(target);
+      revealTargets.push(target);
+      target.classList.add("reveal-target", `reveal--${directions[index % directions.length]}`);
+      if (stagger) target.style.setProperty("--reveal-delay", `${(index % directions.length) * stagger}ms`);
+    });
+  };
 
-  revealTargets.forEach((target, index) => {
-    target.classList.add("reveal-target");
-    if (target.matches(".workflow__item, .tour-card, .source-ledger__row, .pricing-card, .purchase-steps li")) {
-      target.style.setProperty("--reveal-delay", `${(index % 4) * 85}ms`);
-    }
-  });
+  addRevealGroup(".workflow__item", ["left", "up", "right"], 70);
+  addRevealGroup(".tour-intro", ["left"]);
+  addRevealGroup(".tour-card", ["left", "up", "right"], 70);
+  addRevealGroup(".home-section .section-grid > *", ["left", "right"], 60);
+  addRevealGroup(".source-ledger__row", ["left", "right"], 55);
+  addRevealGroup(".pricing-card", ["left", "right"], 90);
+  addRevealGroup(".pricing-disclosure, .pricing-contact, .contact-band__inner", ["up"]);
+  addRevealGroup(".purchase-steps li", ["left", "right"], 65);
 
-  const homeSections = Array.from(document.querySelectorAll(".home-section"));
+  addRevealGroup(".article-intro__inner", ["left"]);
+  addRevealGroup(".toc", ["left"]);
+  addRevealGroup(".prose > h2", ["left", "right"]);
+  addRevealGroup(".prose > .callout, .prose > .definition-list, .prose > .data-table, .prose > .download-list, .pricing-page__content > .callout, .pricing-explainer", ["up"]);
+  addRevealGroup(".contact-panel", ["right"]);
+  addRevealGroup(".not-found > .shell", ["scale"]);
+
+  addRevealGroup(".launch-principles h2", ["up"]);
+  addRevealGroup(".launch-principles article", ["left", "up", "right"], 90);
+  addRevealGroup(".launch-section-intro", ["left"]);
+  addRevealGroup(".launch-workflow__steps li", ["left", "up", "right"], 85);
+  addRevealGroup(".launch-workflow__screens a", ["left", "up", "right"], 95);
+  addRevealGroup(".launch-feature-strip article", ["left", "up", "up", "right"], 70);
+  addRevealGroup(".launch-proof__intro > div", ["left"]);
+  addRevealGroup(".launch-proof__stats", ["right"]);
+  addRevealGroup(".launch-proof__feature", ["left"]);
+  addRevealGroup(".launch-proof__rail a", ["right"], 90);
+  addRevealGroup(".launch-capabilities > div", ["left", "right"], 65);
+  addRevealGroup(".launch-price--free", ["left"]);
+  addRevealGroup(".launch-price--lifetime", ["scale"]);
+  addRevealGroup(".launch-price__explain", ["right"]);
+  addRevealGroup(".launch-pricing__download", ["up"]);
+  addRevealGroup(".launch-privacy__copy", ["left"]);
+  addRevealGroup(".launch-privacy__media", ["right"]);
+  addRevealGroup(".launch-open-source__inner > *", ["left", "up", "right"], 80);
+  addRevealGroup(".launch-final__inner", ["scale"]);
+
+  const animatedSections = Array.from(document.querySelectorAll(".home-section, .launch-page main > section, .article-intro"));
 
   if (reduceMotion.matches || !("IntersectionObserver" in window)) {
     revealTargets.forEach((target) => target.classList.add("is-visible"));
-    homeSections.forEach((section) => section.classList.add("is-visible"));
+    animatedSections.forEach((section) => section.classList.add("is-section-visible"));
   } else {
     const revealObserver = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
@@ -69,14 +94,41 @@
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       });
-    }, { threshold: 0.01, rootMargin: "0px 0px -7% 0px" });
+    }, { threshold: 0.12, rootMargin: "0px 0px -7% 0px" });
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-section-visible");
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -12% 0px" });
 
     revealTargets.forEach((target) => revealObserver.observe(target));
-    homeSections.forEach((section) => revealObserver.observe(section));
+    animatedSections.forEach((section) => sectionObserver.observe(section));
   }
 
-  const hero = document.querySelector(".hero");
-  const appFrame = document.querySelector(".app-frame");
+  const progress = document.createElement("div");
+  progress.className = "page-sweep-progress";
+  progress.setAttribute("aria-hidden", "true");
+  document.body.append(progress);
+
+  let progressFrame = 0;
+  const updateProgress = () => {
+    progressFrame = 0;
+    const available = document.documentElement.scrollHeight - window.innerHeight;
+    const value = available > 0 ? Math.min(1, Math.max(0, window.scrollY / available)) : 0;
+    progress.style.setProperty("--page-progress", value.toFixed(4));
+  };
+  const requestProgress = () => {
+    if (!progressFrame) progressFrame = window.requestAnimationFrame(updateProgress);
+  };
+  updateProgress();
+  window.addEventListener("scroll", requestProgress, { passive: true });
+  window.addEventListener("resize", requestProgress);
+
+  const hero = document.querySelector(".launch-hero, .hero");
+  const appFrame = document.querySelector(".launch-device, .app-frame");
   const finePointer = window.matchMedia("(pointer: fine)");
 
   if (hero && appFrame && finePointer.matches && !reduceMotion.matches) {
@@ -114,8 +166,8 @@
     });
   }
 
-  const localBoundary = document.querySelector(".local-boundary");
-  const privacySection = localBoundary?.closest(".home-section");
+  const localBoundary = document.querySelector(".launch-privacy__media, .local-boundary");
+  const privacySection = localBoundary?.closest(".launch-privacy, .home-section");
 
   if (localBoundary && privacySection && finePointer.matches && !reduceMotion.matches) {
     privacySection.addEventListener("pointermove", (event) => {

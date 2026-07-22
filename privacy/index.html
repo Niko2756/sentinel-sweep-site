@@ -5,10 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Privacy Policy — Sentinel Sweep</title>
   <meta name="description" content="How Sentinel Sweep processes user-selected files locally, stores app state on the Mac, and handles Apple purchases, website visits, and support email.">
-  <meta name="theme-color" content="#06101c">
+  <meta name="theme-color" content="#050c16">
+  <link rel="canonical" href="https://niko2756.github.io/sentinel-sweep-site/privacy/">
+  <meta property="og:title" content="Privacy Policy — Sentinel Sweep">
+  <meta property="og:description" content="How Sentinel Sweep processes user-selected files locally, stores app state on the Mac, and handles Apple purchases, website visits, and support email.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://niko2756.github.io/sentinel-sweep-site/privacy/">
+  <meta property="og:image" content="https://niko2756.github.io/sentinel-sweep-site/assets/launch-review.png">
+  <meta property="og:image:width" content="1440">
+  <meta property="og:image:height" content="900">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy — Sentinel Sweep">
+  <meta name="twitter:description" content="Learn how Sentinel Sweep handles local file analysis, app state, Apple purchases, website visits, and support email.">
+  <meta name="twitter:image" content="https://niko2756.github.io/sentinel-sweep-site/assets/launch-review.png">
   <link rel="icon" href="/sentinel-sweep-site/assets/app-icon.png">
-  <link rel="stylesheet" href="/sentinel-sweep-site/assets/styles.css">
-  <script src="/sentinel-sweep-site/assets/site.js" defer></script>
+  <link rel="apple-touch-icon" href="/sentinel-sweep-site/assets/app-icon.png">
+  <link rel="manifest" href="/sentinel-sweep-site/site.webmanifest">
+  <link rel="stylesheet" href="/sentinel-sweep-site/assets/styles.css?v=launch-20260721-motion">
+  <script src="/sentinel-sweep-site/assets/site.js?v=launch-20260721-motion" defer></script>
 </head>
 <body class="article-page">
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -26,7 +40,7 @@
         <a href="/sentinel-sweep-site/support/">Support</a>
         <a href="/sentinel-sweep-site/privacy/" aria-current="page">Privacy</a>
         <a href="/sentinel-sweep-site/open-source/">Open Source</a>
-        <a class="button" href="mailto:SentinelSweepSupport@gmail.com?subject=Sentinel%20Sweep%20Privacy%20Question">Privacy Contact</a>
+        <a class="button" href="https://apps.apple.com/app/id6790672917" aria-label="Download Sentinel Sweep free on the Mac App Store">Download free</a>
       </nav>
     </div>
   </header>
@@ -52,7 +66,7 @@
           <a href="#on-device-analysis">On-device analysis</a>
           <a href="#local-storage">Information stored on your Mac</a>
           <a href="#collection-sharing">Collection and sharing</a>
-          <a href="#apple-services">Apple services and purchases</a>
+          <a href="#apple-services">Apple services, purchases, and diagnostics</a>
           <a href="#website-email">Website and email</a>
           <a href="#choices-retention">Your choices and retention</a>
           <a href="#security">Security</a>
@@ -115,15 +129,15 @@
           <p>Sentinel Sweep does not include a feature that uploads scanned media, filenames, file paths, scan results, learned decisions, bookmark data, transfer logs, or app-usage information over a network or to an online service. It does not contain advertising SDKs, third-party analytics SDKs, or cross-app tracking code. It does not sell personal information or share app data for behavioral advertising.</p>
           <p>The Mac App Store build uses App Sandbox and does not request the outbound network-client entitlement. The bundled FFmpeg helpers are also sandboxed for the release and are compiled with FFmpeg networking disabled.</p>
 
-          <h2 id="apple-services">Apple services, purchases, TestFlight, and diagnostics</h2>
-          <p>Apple independently operates macOS, the Mac App Store, TestFlight, StoreKit, and the Sensitive Content Analysis framework. Apple's handling of information is governed by Apple's policies and by the choices you make in macOS, the App Store, and TestFlight.</p>
+          <h2 id="apple-services">Apple services, purchases, and diagnostics</h2>
+          <p>Apple independently operates macOS, the Mac App Store, StoreKit, and the Sensitive Content Analysis framework. Apple's handling of information is governed by Apple's policies and by the choices you make in macOS and the App Store.</p>
 
           <h3>Optional App Store purchase</h3>
           <p>Apple processes the optional Transfer Access purchase through the Mac App Store. Sentinel Sweep receives Apple-signed StoreKit transaction and entitlement information needed to decide whether Quick Copy, Quick Move, the final Review Transfer screen, or a new Copy or Move transfer can be used. The app does not receive your full payment-card or bank-account details, and the publisher does not operate a separate payment system for this purchase.</p>
           <p>StoreKit purchase requests and entitlement checks do not include scanned media, filenames, file paths, classifications, learned decisions, bookmarks, transfer queues, or transfer logs. Choosing Restore Purchases asks Apple to synchronize eligible purchase status. A pending, refunded, or revoked transaction can affect Transfer Access for future file operations, but it does not remove safety controls for work already underway. Buying or restoring access does not automatically resume an attempted action or start a file operation.</p>
 
-          <h3>Diagnostics and TestFlight feedback</h3>
-          <p>If you choose to share diagnostics with Apple or app developers, Apple may provide crash or performance diagnostics. Sentinel Sweep does not intentionally attach scanned file contents, file paths, or scan results to those diagnostics. System-generated reports can still contain technical context selected by macOS. If you submit feedback through TestFlight, Apple may include information you choose to send, such as written comments, a screenshot, crash details, or device and operating-system information.</p>
+          <h3>Diagnostics</h3>
+          <p>If you choose to share diagnostics with Apple or app developers, Apple may provide crash or performance diagnostics. Sentinel Sweep does not intentionally attach scanned file contents, file paths, or scan results to those diagnostics. System-generated reports can still contain technical context selected by macOS.</p>
 
           <h2 id="website-email">Public website and support email</h2>
           <h3>GitHub Pages website</h3>
@@ -131,7 +145,7 @@
 
           <h3>Gmail support mailbox</h3>
           <p>If you email <a href="mailto:SentinelSweepSupport@gmail.com">SentinelSweepSupport@gmail.com</a>, Google processes the message through Gmail. The publisher receives the information you choose to include, such as your email address, message headers, written description, and any attachments. Do not send private media, passwords, passkeys, signing keys, recovery codes, or unredacted logs.</p>
-          <p>Support messages may be kept while needed to respond, investigate beta or purchase-recognition issues, prevent abuse, maintain necessary business records, or comply with law. Do not send an Apple Account password, payment-card details, StoreKit transaction tokens, or full purchase receipts. You may request deletion of a support message by emailing the same address. A request may not cover copies that Google retains under its own policies or information that must be retained for security or legal reasons.</p>
+          <p>Support messages may be kept while needed to respond, investigate technical or purchase-recognition issues, prevent abuse, maintain necessary business records, or comply with law. Do not send an Apple Account password, payment-card details, StoreKit transaction tokens, or full purchase receipts. You may request deletion of a support message by emailing the same address. A request may not cover copies that Google retains under its own policies or information that must be retained for security or legal reasons.</p>
 
           <h2 id="choices-retention">Your choices, deletion, and retention</h2>
           <p>Local app state remains on your Mac until you clear it, replace it through ordinary use, complete a factory reset, or macOS removes the app's container. Different controls affect different records:</p>
@@ -164,7 +178,7 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer launch-footer">
     <div class="shell site-footer__inner">
       <div class="footer-meta">
         <span>© 2026 Niko Lim</span>
@@ -175,8 +189,11 @@
         <a href="/sentinel-sweep-site/support/">Support</a>
         <a href="/sentinel-sweep-site/privacy/">Privacy</a>
         <a href="/sentinel-sweep-site/privacy-choices/">Privacy Choices</a>
+        <a href="/sentinel-sweep-site/privacy-contact/">Privacy Contact</a>
         <a href="/sentinel-sweep-site/open-source/">Open Source</a>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Standard EULA</a>
       </nav>
+      <p class="launch-footer__legal">Apple, the Apple logo, and Mac are trademarks of Apple Inc., registered in the U.S. and other countries. Mac App Store is a service mark of Apple Inc.</p>
     </div>
   </footer>
 </body>
