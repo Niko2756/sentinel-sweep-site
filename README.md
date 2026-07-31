@@ -22,7 +22,7 @@ Public base URL:
 
 Mac App Store URL:
 
-`https://apps.apple.com/app/id6790672917`
+`https://apps.apple.com/us/app/sentinel-sweep/id6790672917`
 
 ## Local preview
 
